@@ -1,0 +1,31 @@
+{
+  "stackwright": "1.0.0",
+  "name": "3D Prioritization",
+  "prefix": "3dp",
+  "scope": "@3dp",
+  "parent": "C:/TechRich/Projects/3DP",
+  "mode": "skeleton",
+  "topology": "polyrepo",
+  "roles": {
+    "docs": { "repo": "3dp-docs" },
+    "api": { "repo": "3dp-api", "profile": "ts-nest" },
+    "web": { "repo": "3dp-app", "profile": "react-vite" },
+    "db": { "repo": "3dp-db", "profile": "postgres-drizzle" },
+    "infra": { "repo": "3dp-infra", "profile": "compose-northflank" }
+  },
+  "modules": ["kernel"],
+  "areas": ["app", "ui", "lib"],
+  "tenancy": "shared-schema-rls",
+  "dataClassification": true,
+  "seed": true,
+  "identity": "keycloak",
+  "features": ["realtime", "jobs", "ai", "storage", "email"],
+  "hosting": "northflank",
+  "registry": "github-packages",
+  "git": { "init": true, "commit": true, "remote": false },
+  "ci": "github-actions",
+  "codeowners": "team-per-repo",
+  "history": [
+    { "date": "2026-10-05", "action": "scaffold", "adr": "0012" }
+  ]
+}
